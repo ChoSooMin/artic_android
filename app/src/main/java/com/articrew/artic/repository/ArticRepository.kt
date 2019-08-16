@@ -84,10 +84,10 @@ class ArticRepository (
             .observeOn(scheduler.ui())
     }
 
-    fun readingHistoryArticle(): Observable<List<Article>> {
+    fun readingHistoryArticle(): Observable<MutableList<Article>> {
         return remote.getReadingHistoryArticle()
             .subscribeOn(scheduler.io())
-            .map { if(it.success && it.data != null) it.data.map { ArticleMapper.to(it) } else listOf() }
+            .map { if(it.success && it.data != null) it.data.map { ArticleMapper.to(it) }.toMutableList() else mutableListOf() }
             .observeOn(scheduler.ui())
     }
 
@@ -230,6 +230,17 @@ class ArticRepository (
         return remote.postCollectArticleInArchive(archiveIdx, articleIdx)
             .subscribeOn(scheduler.io())
             .map { it.message }
+            .observeOn(scheduler.ui())
+    }
+
+    /**
+     * 아티클 담기 취소 (https://github.com/artic-development/artic_server/wiki/아티클-담기-취소)
+     * @author ChoSooMin
+     * */
+    fun deleteArticleInMyArchive(archiveIdx: Int, articleIdx: Int) : Observable<Boolean> {
+        return remote.deleteArticleInMyArchive(archiveIdx, articleIdx)
+            .subscribeOn(scheduler.io())
+            .map { it.success }
             .observeOn(scheduler.ui())
     }
 

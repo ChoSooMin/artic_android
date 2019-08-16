@@ -22,7 +22,7 @@ class DetailReadingHistoryActivity : BaseActivity() {
         setContentView(R.layout.activity_detail_reading_history)
 
 
-        adapter= ArticleOverviewRecyclerViewAdapter(this, listOf(), false)
+        adapter= ArticleOverviewRecyclerViewAdapter(this, mutableListOf(), false, null)
         rv_act_detail_reading_history.adapter=adapter
         rv_act_detail_reading_history.layoutManager= LinearLayoutManager(this, RecyclerView.VERTICAL,false)
 

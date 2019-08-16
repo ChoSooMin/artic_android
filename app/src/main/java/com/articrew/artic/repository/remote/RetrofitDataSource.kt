@@ -61,6 +61,14 @@ class RetrofitDataSource(
         }
         return createUninitializedToken()
     }
+
+    // @수민) 나의 아카이브에서 아티클 삭제하기
+    fun deleteArticleInMyArchive(archiveIdx: Int, articleIdx: Int) : Observable<BaseResponse<Any>> {
+        Auth.token?.let { token ->
+            return retrofit.deleteArticleInMyArchive(contentType, token, archiveIdx, articleIdx)
+        }
+        return createUninitializedToken()
+    }
     /////////////////////
 
     // Archive 관련 함수들

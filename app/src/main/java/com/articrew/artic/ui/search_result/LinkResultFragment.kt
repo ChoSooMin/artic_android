@@ -29,7 +29,7 @@ class LinkResultFragment(
         super.onActivityCreated(savedInstanceState)
 
 
-        adapter= ArticleOverviewRecyclerViewAdapter(activity!!, mutableListOf(), false)
+        adapter= ArticleOverviewRecyclerViewAdapter(activity!!, mutableListOf(), false, null)
         rv_search_result_link.adapter=adapter
         rv_search_result_link.layoutManager= LinearLayoutManager(context!!, RecyclerView.VERTICAL,false)
 

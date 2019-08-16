@@ -26,8 +26,9 @@ import org.koin.android.ext.android.inject
 
 class ArticleOverviewRecyclerViewAdapter(
     val ctx: FragmentActivity,
-    var dataList:List<Article>,
-    val isDirectWebView: Boolean
+    var dataList:MutableList<Article>,
+    val isDirectWebView: Boolean,
+    val archive_idx : Int?
 ): RecyclerView.Adapter<ArticleOverviewRecyclerViewAdapter.Holder>() {
 
     private val repository : ArticRepository by ctx.inject()
@@ -115,13 +116,32 @@ class ArticleOverviewRecyclerViewAdapter(
         p0.swipeLayout.showMode = SwipeLayout.ShowMode.PullOut // swipeLayout 모드 설정?
         p0.swipeLayout.addDrag(SwipeLayout.DragEdge.Right, p0.bottomWrapper2) // 오른쪽에서 스와이프 하면 이 레이아웃이 나오게 하는 것 같음
         p0.bottomWrapper2.setOnClickListener {
-            // TODO 아티클 담기 취소 통신
+            // @수민) 아티클 담기 취소
+            repository
+                .deleteArticleInMyArchive(archiveIdx = archive_idx!!, articleIdx = dataList[p1].id)
+                .subscribe(
+                    {
+//                        ctx.toast(it.toString())
+                        dataList.remove(dataList[p1])
+                        notifyItemRemoved(p1)
 
+                        var dataCountText = ctx.findViewById<TextView>(R.id.mypage_scrap_link_num)
+                        dataCountText.text = dataList.size.toString()
+                    }, {
+                        Log.e("remove article", it.message.toString())
+                    }
+                )
         }
 
 //      p0.swipeLayout.isSwipeEnabled = false // ㅇㅣ 코드를 사용하면 SwipeLayout이 enabled 되어 스와이프 해도 나오지 않는다.
         p0.swipeLayout.isSwipeEnabled = isMyPageScrapACtivity // 현재 activity가 MyPageScrapActivity일때만 스와이프를 가능하게 해준다.
 
+    }
+
+    private fun removeItem(position : Int) {
+//        var item = dataList[position]
+        dataList.removeAt(position)
+        notifyItemRemoved(position)
     }
 
     inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView){

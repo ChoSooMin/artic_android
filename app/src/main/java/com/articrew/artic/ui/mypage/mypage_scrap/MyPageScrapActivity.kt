@@ -31,8 +31,8 @@ class MyPageScrapActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page_scrap)
 
-        adapter= ArticleOverviewRecyclerViewAdapter(this, listOf(), true)
         val archiveId = intent.getIntExtra("archive_idx", -1)
+        adapter= ArticleOverviewRecyclerViewAdapter(this, mutableListOf(), true, archiveId)
         val archiveTitle = intent.getStringExtra("archive_title") // 아카이브 이름 받아오기
         val archiveImg = intent.getStringExtra("archive_img") // 아카이브 이름 받아오기
 

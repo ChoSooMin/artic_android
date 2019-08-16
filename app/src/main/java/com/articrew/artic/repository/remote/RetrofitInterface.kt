@@ -80,6 +80,18 @@ interface RetrofitInterface {
         @Path("article_idx") articleIdx: Int
     ): Observable<BaseResponse<Int>>
 
+    /**
+     * 아티클 담기 취소 (https://github.com/artic-development/artic_server/wiki/아티클-담기-취소)
+     * @author ChoSooMin
+     * */
+    @DELETE ("/archive/{archive_idx}/article/{article_idx}")
+    fun deleteArticleInMyArchive(
+        @Header("Content-Type") contentType: String,
+        @Header("token") token: String,
+        @Path("archive_idx") archiveId: Int,
+        @Path("article_idx") articleIdx: Int
+    ) : Observable<BaseResponse<Any>>
+
     // @수민) 아티클 좋아요
     /**
      * 아티클 좋아요 좋아요 취소 (https://github.com/artic-development/artic_server/wiki/%EC%95%84%ED%8B%B0%ED%81%B4-%EC%A2%8B%EC%95%84%EC%9A%94---%EC%A2%8B%EC%95%84%EC%9A%94-%EC%B7%A8%EC%86%8C)
