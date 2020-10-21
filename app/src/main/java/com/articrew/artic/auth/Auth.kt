@@ -26,23 +26,23 @@ import retrofit2.converter.gson.GsonConverterFactory
  * @author greedy0110
  * */
 class Auth (
-    private val context: Context,
-    private val logger: Logger
-) {
-    private val pref: SharedPreferences by lazy { context.getSharedPreferences("login", MODE_PRIVATE) }
+        private val context: Context,
+        private val logger: Logger
+        ) {
+        private val pref: SharedPreferences by lazy { context.getSharedPreferences("login", MODE_PRIVATE) }
 
-    enum class LoginKind {
-        EMAIL, KAKAO, FACEBOOK
-    }
+        enum class LoginKind {
+            EMAIL, KAKAO, FACEBOOK
+        }
 
-    companion object {
+        companion object {
         // TODO 이거 아틱 도메인 네임으로 변경 & 이거 버전관리 어캐할까?
         val BASE_URL = "http://15.164.90.221:3333"
         var token: String? = null
     }
 
-    private val retrofit: com.articrew.artic.auth.AuthInterface by lazy {
-        Retrofit.Builder()
+        private val retrofit: com.articrew.artic.auth.AuthInterface by lazy {
+            Retrofit.Builder()
             .baseUrl(com.articrew.artic.auth.Auth.Companion.BASE_URL)
             .client(OkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
