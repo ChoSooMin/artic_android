@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.reset_password.InputAuthCodeActivity">
+
+    <LinearLayout
+        android:id="@+id/info_auth_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.NanumL.21s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전송된 " />
+
+            <TextView
+                style="@style/Text.NanumB.21s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인증번호" />
+
+            <TextView
+                style="@style/Text.NanumL.21s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="를 입력해주세요" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Text.NanumL.21s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="입력하신 이메일 주소로 " />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_auth_code">
+
+        <EditText
+            android:id="@+id/et_act_input_auth_code_auth_code"
+            style="@style/Text.NanumR.14s.23h.BrownishGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="4gd29fg"
+            android:theme="@style/EditTheme" />
+
+        <TextView
+            style="@style/Text.NanumR.16s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인증번호" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="64dp"
+        android:background="#d1d1d1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_act_input_auth_code_complete"
+        style="@style/Text.NanumR.14s.23h.White"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/btn_login"
+        android:text="완료"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

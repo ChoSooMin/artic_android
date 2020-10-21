@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.signup.signup.SignupPrivateActivity">
+
+    <EditText
+        android:id="@+id/et_act_signup_private_name"
+        style="@style/Text.NanumL.14s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="김아틱"
+        android:nextFocusDown="@id/et_act_signup_private_birth"
+        android:singleLine="true"
+        android:theme="@style/EditTheme" />
+
+    <EditText
+        android:id="@+id/et_act_signup_private_birth"
+        style="@style/Text.NanumL.14s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="YYYY-MM-DD"
+        android:inputType="phone"
+        android:singleLine="true"
+        android:theme="@style/EditTheme" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <TextView
+            android:id="@+id/signup_private_done_txt"
+            style="@style/Text.NanumR.17s.19h.BrownishGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="20dp"
+            android:text="완료" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp">
+
+        <TextView
+            android:id="@+id/tv_act_signup_private_name_check_success"
+            style="@style/Text.NanumL.12s.SoftBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사용하실 수 있는 이름입니다"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_act_signup_private_name_check_fail"
+            style="@style/Text.NanumL.12s.Red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15자 이내로 입력해주세요"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="43dp"
+        android:paddingRight="170dp"
+        android:paddingBottom="74dp">
+
+        <TextView
+            android:id="@+id/name_txt"
+            style="@style/Text.NanumB.21s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름" />
+
+        <TextView
+            android:id="@+id/signup_txt1"
+            style="@style/Text.NanumL.21s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/name_txt"
+            android:text="과 " />
+
+        <TextView
+            android:id="@+id/birth_txt"
+            style="@style/Text.NanumB.21s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/signup_txt1"
+            android:text="생년월일" />
+
+        <TextView
+            style="@style/Text.NanumL.21s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/birth_txt"
+            android:text="을" />
+
+        <TextView
+            style="@style/Text.NanumL.21s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_txt"
+            android:layout_marginTop="8dp"
+            android:text="알려주세요!" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp">
+
+        <TextView
+            android:id="@+id/tv_act_signup_private_birth_check_success"
+            style="@style/Text.NanumL.12s.SoftBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사용하실 수 있는 형식입니다"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_act_signup_private_birth_check_fail"
+            style="@style/Text.NanumL.12s.Red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="형식에 맞게 입력해주세요"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/Text.NanumR.16s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="이름 (닉네임)" />
+
+    <TextView
+        style="@style/Text.NanumR.16s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="54dp"
+        android:text="생년월일" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#d1d1d1" />
+</LinearLayout>

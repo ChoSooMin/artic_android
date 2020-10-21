@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.mypage.mypage_scrap.MyPageScrapActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/white">
+
+        <TextView
+            style="@style/Text.NanumR.17s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="나의 아카이브" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="#d1d1d1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#9d9d9d" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="114dp">
+
+        <ImageView
+            android:id="@+id/btn_mypage_myarchive_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/btn_more"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mypage_scrap_link_num"
+            style="@style/Text.NanumB.14s.23h.SoftBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mypage_scrap_link_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mypage_scrap_link_title" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/Text.NanumL.14s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mypage_scrap_link_title"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/mypage_scrap_link_num"
+            android:text="개의 링크가 저장 되었습니다"
+            app:layout_constraintStart_toEndOf="@+id/mypage_scrap_link_num"
+            app:layout_constraintTop_toBottomOf="@+id/mypage_scrap_link_title" />
+
+        <TextView
+            android:id="@+id/mypage_scrap_link_title"
+            style="@style/Text.NanumB.21s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:text="타이포 디자인"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_mypage_scrap_link"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/my_page_scrap_link_result_empty"
+        layout="@layout/search_result_empty"
+        android:visibility="visible" />
+</LinearLayout>

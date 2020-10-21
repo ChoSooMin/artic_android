@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_rv_item_link_list"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
+    android:background="@color/very_light_pink">
+
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:clickToClose="true">
+
+        <!-- 삭제 버튼 -->
+        <RelativeLayout
+            android:id="@+id/bottom_wrapper_2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="#ff1515"
+            android:gravity="center"
+            android:tag="Bottom4">
+
+            <LinearLayout
+                android:id="@+id/magnifier2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_trashcan" />
+
+                <TextView
+                    style="@style/Text.NanumL.14s.21h.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="삭제" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- 여기까지 삭제 버튼 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/rv_link_list_img"
+                android:layout_width="79dp"
+                android:layout_height="79dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/archive_card_round"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_link_list_title"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/rv_link_list_storage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/btn_folder" />
+
+                <RelativeLayout
+                    android:id="@+id/rv_link_list_storage_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/rv_link_list_storage">
+
+                    <TextView
+                        style="@style/Text.NanumL.12s.BrownGrey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="담기" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/rv_link_list_like_num"
+                    style="@style/Text.NanumR.14s.23h.BrownishGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/archive_card_round"
+                    tools:text="1,202" />
+
+                <ToggleButton
+                    android:id="@+id/rv_link_list_like"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/toggle_btn_like"
+                    android:checked="true"
+                    android:textOff=""
+                    android:textOn="" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/rv_link_list_url"
+                style="@style/Text.NanumR.14s.23h.BrownishGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginRight="70dp"
+                android:layout_toStartOf="@id/rv_link_list_img"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="brunch.co.kr" />
+
+            <TextView
+                android:id="@+id/rv_link_list_title"
+                style="@style/Text.NanumL.15s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_link_list_url"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="44dp"
+                android:layout_toStartOf="@id/rv_link_list_img"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="로고디자인을 위한 지식에 대한 모든 것을 파헤친다 " />
+        </RelativeLayout>
+    </com.daimajia.swipe.SwipeLayout>
+</RelativeLayout>
